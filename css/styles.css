@@ -204,6 +204,8 @@ a {
   margin-right: 0;
   display: block;
 }
+/* If using image logo */
+.ig-logo { display: block; width: 103px; height: 29px; }
 
 /* Main Content */
 main {
@@ -218,7 +220,7 @@ main {
 /* Profile Header (matching current HTML structure) */
 .perfil-desc .description {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 162px 1fr; /* match .avatar-ring size */
   gap: 30px;
   align-items: center;
   margin-bottom: 24px;
