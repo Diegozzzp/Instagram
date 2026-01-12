@@ -32,12 +32,12 @@
   flex-direction: column;
   align-items: center;
   flex: 0 0 auto;
-  width: 90px;
+  width: 96px;
 }
 
 #img-historias {
-  width: 66px;
-  height: 66px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid white;
@@ -183,6 +183,15 @@ a {
   border-radius: 24px;
   transition: background-color 0.2s ease;
   color: var(--text-primary);
+  font-size: 16px; /* match main sidebar items */
+  font-weight: 400; /* match main sidebar items */
+}
+
+/* Ensure text inside secondary sidebar items has no default margins */
+.contenido-aside2 p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
 }
 
 .contenido-aside2:hover {
@@ -191,7 +200,7 @@ a {
 }
 
 /* Profile image styles */
-#foto-yo, #perfil-billie {
+#foto-yo {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -209,8 +218,8 @@ a {
 }
 /* If using image logo */
 .ig-logo { display: block; width: 103px; height: 29px; }
-/* Readable Instagram wordmark (shorter height, a bit wider) */
-.ig-logo { height: 18px; width: auto; max-width: 170px; }
+/* Readable Instagram wordmark (moderate size) */
+.ig-logo { height: 20px; width: auto; max-width: 230px; transform: none; transform-origin: left center; }
 
 /* Main Content */
 main {
@@ -236,8 +245,8 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px; /* 2px inner white gap */
-  border: 2px solid transparent; /* 2px gradient ring */
+  padding: 0; /* no inner gap */
+  border: 1px solid transparent; /* 1px gradient ring */
   border-radius: 50%;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
@@ -297,11 +306,13 @@ main {
 
 /* Bottom group (Threads, Más, Modo oscuro) smaller and spaced */
 .caja-aside2 { margin-top: 20px; }
-.caja-aside2 .contenido-aside2 { padding: 8px 10px; }
+.caja-aside2 .contenido-aside2 { padding: 12px; }
 .caja-aside2 .contenido-aside2 + .contenido-aside2 { margin-top: 8px; }
-.caja-aside2 .contenido-aside2 svg { width: 20px; height: 20px; }
+.caja-aside2 .contenido-aside2 svg { width: 24px; height: 24px; margin-right: 16px; }
 .theme-toggle label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
 .theme-toggle .theme-icon { font-size: 24px; }
+/* Ensure icon has consistent width like SVGs and spacing looks centered */
+.theme-toggle-btn .theme-icon { width: 24px; display: inline-flex; justify-content: center; }
 
 /* Icon-only theme toggle button */
 .theme-toggle-btn {
@@ -312,8 +323,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 16px; /* match sidebar icon-text spacing */
-  padding: 12px; /* match .contenido-aside padding */
-  border-radius: 24px; /* match .contenido-aside radius */
+  padding: 0; /* wrapper handles spacing */
+  border-radius: 0;
   white-space: nowrap; /* keep icon + text in one line */
 }
 .theme-toggle-btn:hover { background: var(--hover-bg); }
@@ -552,7 +563,7 @@ main {
     width: 120px;
     height: 120px;
   }
-  .avatar-ring { padding: 3px; }
+  .avatar-ring { padding: 0; }
   
   .description-follow {
     justify-content: center;
