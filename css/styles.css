@@ -10,8 +10,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Reduce vertical space for the top logo row */
-.aside-bar > .contenido-aside:first-child { padding-top: 8px; padding-bottom: 8px; }
+/* Fixed logo row height for consistency */
+.aside-bar > .contenido-aside:first-child { height: 100px; padding: 0 12px; }
 
 /* Stories (Historias) aligned to current HTML (container) */
 .historias {
@@ -218,8 +218,8 @@ a {
 }
 /* If using image logo */
 .ig-logo { display: block; width: 103px; height: 29px; }
-/* Readable Instagram wordmark (moderate size) */
-.ig-logo { width: clamp(120px, 100%, 200px); height: auto; transform: none; transform-origin: left center; }
+/* Logo scales inside the 100px row, preserving aspect ratio */
+.ig-logo { max-height: 100%; max-width: 100%; height: auto; width: auto; display: block; object-fit: contain; }
 
 /* Main Content */
 main {
