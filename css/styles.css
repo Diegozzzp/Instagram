@@ -206,6 +206,8 @@ a {
 }
 /* If using image logo */
 .ig-logo { display: block; width: 103px; height: 29px; }
+/* Larger readable Instagram wordmark */
+.ig-logo { width: 140px; height: auto; }
 
 /* Main Content */
 main {
@@ -220,7 +222,7 @@ main {
 /* Profile Header (matching current HTML structure) */
 .perfil-desc .description {
   display: grid;
-  grid-template-columns: 162px 1fr; /* match .avatar-ring size */
+  grid-template-columns: auto 1fr; /* auto-fit avatar with ring */
   gap: 30px;
   align-items: center;
   margin-bottom: 24px;
@@ -228,20 +230,20 @@ main {
 
 /* Profile avatar ring wrapper */
 .avatar-ring {
-  width: 162px;
-  height: 162px;
-  border-radius: 50%;
-  padding: 4px;
-  background: conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 4px; /* ring thickness */
+  border-radius: 50%;
+  background: conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
 }
 
 .avatar-ring #perfil-billie {
-  width: 154px;
-  height: 154px;
-  border: 3px solid #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff; /* white border inside ring */
 }
 
 /* Large profile avatar on the left */
@@ -303,12 +305,15 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  gap: 6px;
+  padding: 6px 10px;
   border-radius: 8px;
+  white-space: nowrap; /* keep icon + text in one line */
 }
 .theme-toggle-btn:hover { background: var(--hover-bg); }
 .theme-toggle-btn:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+/* Reduce text size to avoid wrapping */
+.theme-text { font-size: 12px; line-height: 1; }
 
 /* Screen-reader only helper */
 .sr-only {
@@ -541,8 +546,7 @@ main {
     width: 120px;
     height: 120px;
   }
-  .avatar-ring { width: 132px; height: 132px; }
-  .avatar-ring #perfil-billie { width: 124px; height: 124px; }
+  .avatar-ring { padding: 3px; }
   
   .description-follow {
     justify-content: center;
