@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Handle dark mode toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
     const themeIcon = document.querySelector('.theme-toggle .theme-icon');
     const themeText = document.querySelector('.theme-toggle .theme-text');
     
@@ -224,14 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const isSavedDark = localStorage.getItem('darkMode') === 'enabled';
     if (isSavedDark) {
         document.body.classList.add('dark-mode');
-        if (darkModeToggle) darkModeToggle.checked = true;
     }
     updateThemeToggleUI(isSavedDark);
     
-    // Toggle dark mode
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('change', function() {
-            const isDark = this.checked;
+    // Toggle dark mode via button
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function() {
+            const isDark = !document.body.classList.contains('dark-mode');
             if (isDark) {
                 document.body.classList.add('dark-mode');
                 localStorage.setItem('darkMode', 'enabled');
