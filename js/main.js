@@ -204,25 +204,42 @@ document.addEventListener('DOMContentLoaded', function() {
 // Handle dark mode toggle
 document.addEventListener('DOMContentLoaded', function() {
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const themeIcon = document.querySelector('.theme-toggle .theme-icon');
+    const themeText = document.querySelector('.theme-toggle .theme-text');
     
     // Check for saved user preference, if any, on load
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        if (darkModeToggle) {
-            darkModeToggle.checked = true;
+    function updateThemeToggleUI(isDark) {
+        if (!themeIcon || !themeText) return;
+        if (isDark) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            themeText.textContent = 'Modo claro';
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            themeText.textContent = 'Modo oscuro';
         }
     }
+
+    const isSavedDark = localStorage.getItem('darkMode') === 'enabled';
+    if (isSavedDark) {
+        document.body.classList.add('dark-mode');
+        if (darkModeToggle) darkModeToggle.checked = true;
+    }
+    updateThemeToggleUI(isSavedDark);
     
     // Toggle dark mode
     if (darkModeToggle) {
         darkModeToggle.addEventListener('change', function() {
-            if (this.checked) {
+            const isDark = this.checked;
+            if (isDark) {
                 document.body.classList.add('dark-mode');
                 localStorage.setItem('darkMode', 'enabled');
             } else {
                 document.body.classList.remove('dark-mode');
                 localStorage.setItem('darkMode', null);
             }
+            updateThemeToggleUI(isDark);
         });
     }
 });

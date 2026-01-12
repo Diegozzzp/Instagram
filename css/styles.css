@@ -202,15 +202,16 @@ a {
   width: 103px;
   height: 29px;
   margin-right: 0;
+  display: block;
 }
 
 /* Main Content */
 main {
   flex: 1;
-  margin-left: 244px; /* offset for fixed sidebar */
+  margin-left: 256px; /* slightly more space from sidebar */
   max-width: 935px;
-  width: calc(100% - 244px);
-  padding: 30px 20px 0;
+  width: calc(100% - 256px);
+  padding: 30px 24px 0;
 }
 
 /* Header/Profile Section */
@@ -221,6 +222,24 @@ main {
   gap: 30px;
   align-items: center;
   margin-bottom: 24px;
+}
+
+/* Profile avatar ring wrapper */
+.avatar-ring {
+  width: 162px;
+  height: 162px;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-ring #perfil-billie {
+  width: 154px;
+  height: 154px;
+  border: 3px solid #fff;
 }
 
 /* Large profile avatar on the left */
@@ -265,6 +284,14 @@ main {
 /* Bio */
 #texto-album { margin: 6px 0; }
 #personas-follow { color: var(--text-secondary); font-size: 14px; }
+
+/* Bottom group (Threads, Más, Modo oscuro) smaller and spaced */
+.caja-aside2 { margin-top: 20px; }
+.caja-aside2 .contenido-aside2 { padding: 8px 10px; }
+.caja-aside2 .contenido-aside2 + .contenido-aside2 { margin-top: 8px; }
+.caja-aside2 .contenido-aside2 svg { width: 20px; height: 20px; }
+.theme-toggle label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.theme-toggle .theme-icon { font-size: 16px; }
 
 /* Stories Section */
 .stories-container {
@@ -488,6 +515,8 @@ main {
     width: 120px;
     height: 120px;
   }
+  .avatar-ring { width: 132px; height: 132px; }
+  .avatar-ring #perfil-billie { width: 124px; height: 124px; }
   
   .description-follow {
     justify-content: center;

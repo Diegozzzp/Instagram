@@ -284,9 +284,12 @@
           </svg>
           <p>Mas</p>
         </div>
-        <div class="contenido-aside2" aria-label="Modo oscuro">
+        <div class="contenido-aside2 theme-toggle" aria-label="Modo oscuro/Claro">
           <input type="checkbox" id="darkModeToggle" class="dark-mode-toggle" />
-          <label for="darkModeToggle" style="margin-left:12px;">Modo oscuro</label>
+          <label for="darkModeToggle">
+            <i class="fas fa-moon theme-icon" aria-hidden="true"></i>
+            <span class="theme-text">Modo oscuro</span>
+          </label>
         </div>
       </div>
     </aside>
@@ -335,12 +338,14 @@
       <header>
         <div class="perfil-desc">
           <section class="description">
-            <img
-              src="./images/billie-perfil.jpg"
-              alt="Foto de perfil de Billie Eilish"
-              id="perfil-billie"
-              loading="lazy"
-            />
+            <div class="avatar-ring">
+              <img
+                src="./images/billie-perfil.jpg"
+                alt="Foto de perfil de Billie Eilish"
+                id="perfil-billie"
+                loading="lazy"
+              />
+            </div>
 
             <a href="#" id="header-desc"
               ><p id="texto-desc">
