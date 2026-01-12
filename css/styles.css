@@ -10,6 +10,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reduce vertical space for the top logo row */
+.aside-bar > .contenido-aside:first-child { padding-top: 8px; padding-bottom: 8px; }
+
 /* Stories (Historias) aligned to current HTML (container) */
 .historias {
   display: flex;
@@ -206,8 +209,8 @@ a {
 }
 /* If using image logo */
 .ig-logo { display: block; width: 103px; height: 29px; }
-/* Larger readable Instagram wordmark */
-.ig-logo { width: 120px; height: auto; }
+/* Readable Instagram wordmark (shorter height, a bit wider) */
+.ig-logo { height: 18px; width: auto; max-width: 170px; }
 
 /* Main Content */
 main {
@@ -233,9 +236,9 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px; /* ring thickness */
+  padding: 2px; /* 2px inner white gap */
+  border: 2px solid transparent; /* 2px gradient ring */
   border-radius: 50%;
-  /* Create only a ring (no solid fill behind the photo) */
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
     conic-gradient(#f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433) border-box;
@@ -298,7 +301,7 @@ main {
 .caja-aside2 .contenido-aside2 + .contenido-aside2 { margin-top: 8px; }
 .caja-aside2 .contenido-aside2 svg { width: 20px; height: 20px; }
 .theme-toggle label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
-.theme-toggle .theme-icon { font-size: 16px; }
+.theme-toggle .theme-icon { font-size: 24px; }
 
 /* Icon-only theme toggle button */
 .theme-toggle-btn {
@@ -308,15 +311,15 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 4px 8px;
-  border-radius: 8px;
+  gap: 16px; /* match sidebar icon-text spacing */
+  padding: 12px; /* match .contenido-aside padding */
+  border-radius: 24px; /* match .contenido-aside radius */
   white-space: nowrap; /* keep icon + text in one line */
 }
 .theme-toggle-btn:hover { background: var(--hover-bg); }
 .theme-toggle-btn:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
-/* Reduce text size to avoid wrapping */
-.theme-text { font-size: 11px; line-height: 1; }
+/* Match sidebar item typography */
+.theme-text { font-size: 16px; line-height: 1; font-weight: 400; }
 
 /* Screen-reader only helper */
 .sr-only {
