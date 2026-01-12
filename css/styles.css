@@ -219,7 +219,7 @@ a {
 /* If using image logo */
 .ig-logo { display: block; width: 103px; height: 29px; }
 /* Readable Instagram wordmark (moderate size) */
-.ig-logo { height: 20px; width: auto; max-width: 230px; transform: none; transform-origin: left center; }
+.ig-logo { width: clamp(120px, 100%, 200px); height: auto; transform: none; transform-origin: left center; }
 
 /* Main Content */
 main {
@@ -246,7 +246,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 0; /* no inner gap */
-  border: 1px solid transparent; /* 1px gradient ring */
+  border: 2px solid transparent; /* 2px gradient ring */
   border-radius: 50%;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
